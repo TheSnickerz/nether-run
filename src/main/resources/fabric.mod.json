@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "nether_run",
+  "version": "${version}",
+  "name": "Nether Run",
+  "description": "A PvE extraction mod for Minecraft. Gear up, dive in, and make it out alive.",
+  "authors": [
+    "TheSnickerz"
+  ],
+  "contact": {
+    "homepage": "https://github.com/TheSnickerz/nether-run",
+    "sources": "https://github.com/TheSnickerz/nether-run"
+  },
+  "license": "MIT",
+  "icon": "assets/nether_run/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.thesnickerz.netherrun.NetherRun"
+    ],
+    "client": [
+      "com.thesnickerz.netherrun.client.NetherRunClient"
+    ]
+  },
+  "mixins": [
+    "nether_run.mixins.json",
+    {
+      "config": "nether_run.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
